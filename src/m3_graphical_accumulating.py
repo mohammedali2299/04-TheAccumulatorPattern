@@ -9,8 +9,8 @@ Additionally, it emphasizes that you must
 before you can implement a solution to the problem in Python.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and mohammed ali.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -109,7 +109,10 @@ def draw_parallel_lines(n, point, length, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ####################################################################
     # ------------------------------------------------------------------
-
+    for k in range(n):
+        line = rg.Line(rg.Point(point.x, point.y + (30 * k)), rg.Point(point.x + length, point.y + (30 * k)))
+        line.attach_to(window)
+        window.render()
 
 def run_test_draw_lines():
     """ Tests the   draw_lines  function. """
@@ -161,7 +164,7 @@ def draw_lines(n, point, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -174,6 +177,13 @@ def draw_lines(n, point, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ####################################################################
     # ------------------------------------------------------------------
+    for k in range(n):
+        p1 = point
+        p2x = point.x + 100
+        p2y = point.y - (200 / (n - 1)) * k + 100
+        line = rg.Line(p1, rg.Point(p2x, p2y))
+        line.attach_to(window)
+        window.render()
 
 
 # ----------------------------------------------------------------------
